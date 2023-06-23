@@ -4,6 +4,13 @@ return {
     enabled = false,
   },
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    keys = {
+      { "<leader>e", false },
+      { "<leader>E", false },
+    },
+  },
+  {
     "beauwilliams/focus.nvim",
     config = function()
       require("focus").setup()
@@ -32,6 +39,12 @@ return {
         floats = "transparent",
       },
     },
+  },
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {
     "nvim-lualine/lualine.nvim",
