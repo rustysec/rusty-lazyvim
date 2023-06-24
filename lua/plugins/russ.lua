@@ -31,6 +31,12 @@ return {
     end,
   },
   {
+    "williamboman/mason.nvim",
+    opts = {
+      PATH = "append",
+    }
+  },
+  {
     "folke/tokyonight.nvim",
     opts = {
       transparent = true,
@@ -70,7 +76,7 @@ return {
           settings = {
             ["rust-analyzer"] = {
               cargo = {
-                target = "x86_64-pc-windows-gnu",
+                -- target = "x86_64-pc-windows-gnu",
               },
             },
           },
