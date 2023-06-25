@@ -11,6 +11,12 @@ return {
     },
   },
   {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      { "<leader><leader>", false },
+    },
+  },
+  {
     "beauwilliams/focus.nvim",
     config = function()
       require("focus").setup()
@@ -34,7 +40,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       PATH = "append",
-    }
+    },
   },
   {
     "folke/tokyonight.nvim",

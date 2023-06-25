@@ -3,3 +3,4 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<leader>e", require("oil").open, { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader><leader>", ": w<CR>", { desc = "Save" })
