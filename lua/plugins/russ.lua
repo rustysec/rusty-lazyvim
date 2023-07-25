@@ -17,7 +17,8 @@ return {
     },
   },
   {
-    "beauwilliams/focus.nvim",
+    "nvim-focus/focus.nvim",
+    version = "*",
     config = function()
       require("focus").setup()
     end,
@@ -59,6 +60,9 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {
+    "tpope/vim-fugitive",
+  },
+  {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
@@ -68,6 +72,7 @@ return {
       opts.inactive_winbar = {
         lualine_c = { { "filename", path = 1 }, "diagnostics" },
       }
+      table.insert(opts.sections.lualine_b, "fileformat")
     end,
   },
   {

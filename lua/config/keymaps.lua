@@ -4,3 +4,4 @@
 
 vim.keymap.set("n", "<leader>e", require("oil").open, { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader><leader>", ": w<CR>", { desc = "Save" })
+vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { desc = "Blame" })
