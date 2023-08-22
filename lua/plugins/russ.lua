@@ -51,6 +51,9 @@ return {
         sidebars = "transparent",
         floats = "transparent",
       },
+      on_colors = function(colors)
+        colors.border = colors.purple
+      end,
     },
   },
   {
@@ -82,12 +85,19 @@ return {
       inlay_hints = { enabled = true },
       ---@type lspconfig.options
       servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
               cargo = {
-                -- target = "x86_64-pc-windows-gnu",
+                target = "x86_64-pc-windows-gnu",
+                -- target = "x86_64-pc-windows-msvc",
+                -- target = "x86_64-apple-darwin",
+              },
+            },
+            diagnostics = {
+              disabled = {
+                "inactive-code",
+                "unlinked-file",
               },
             },
           },
