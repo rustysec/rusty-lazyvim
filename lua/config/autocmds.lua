@@ -15,8 +15,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         require("lsp-inlayhints").on_attach(client, bufnr, true)
     end,
 })
-vim.cmd("hi! link LspInlayHint Comment")
 
+vim.cmd("hi! link LspInlayHint Comment")
 vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = "YankHighlight",
