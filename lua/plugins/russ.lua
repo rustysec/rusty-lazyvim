@@ -6,8 +6,7 @@ return {
         },
     },
     {
-        "willothy/focus.nvim",
-        branch = "minwidth-fix",
+        "nvim-focus/focus.nvim",
         enabled = true,
         config = function()
             require("focus").setup({
