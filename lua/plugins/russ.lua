@@ -59,7 +59,10 @@ return {
     {
         "williamboman/mason.nvim",
         opts = {
-            PATH = "append",
+            -- PATH = "append",
+            ui = {
+                border = "rounded",
+            },
         },
     },
     {
@@ -87,7 +90,7 @@ return {
     {
         "kylechui/nvim-surround",
         config = function(_, opts)
-            require("nvim-surround").setup({})
+            require("nvim-surround").setup()
         end,
     },
     {
@@ -105,22 +108,29 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        ---@class PluginLspOpts
         opts = {
             inlay_hints = { enabled = true },
-            ---@type lspconfig.options
             servers = {
                 rust_analyzer = {
                     settings = {
                         ["rust-analyzer"] = {
                             cargo = {
                                 target = os.getenv("LSP_CARGO_TARGET") or nil,
+                                allFeatures = true,
+                                loadOutDirsFromCheck = true,
+                                runBuildScripts = true,
                             },
-                        },
-                        diagnostics = {
-                            disabled = {
-                                "inactive-code",
-                                "unlinked-file",
+                            checkOnSave = {
+                                allFeatures = true,
+                                command = "clippy",
+                                extraArgs = { "--no-deps" },
+                                target = os.getenv("LSP_CARGO_TARGET") or nil,
+                            },
+                            diagnostics = {
+                                disabled = {
+                                    "inactive-code",
+                                    "unlinked-file",
+                                },
                             },
                         },
                     },
